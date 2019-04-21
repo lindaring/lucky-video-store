@@ -15,82 +15,43 @@
    <name>lucky-video-store EJB module</name>
 
    <dependencies>
-
-      <!-- Declare the APIs we depend on and need for compilation. All of 
-         them are provided by JBoss AS 7 -->
-
-      <!-- Import the EJB API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
       <dependency>
-         <groupId>org.jboss.spec.javax.ejb</groupId>
-         <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+         <groupId>javax</groupId>
+         <artifactId>javaee-api</artifactId>
+         <version>7.0</version>
          <scope>provided</scope>
       </dependency>
-
-      <!-- Import the CDI API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
-      <dependency>
-         <groupId>javax.enterprise</groupId>
-         <artifactId>cdi-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
-
-      <!-- Import the JPA API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
-      <dependency>
-         <groupId>org.hibernate.javax.persistence</groupId>
-         <artifactId>hibernate-jpa-2.0-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
-
-      <!-- JSR-303 (Bean Validation) Implementation -->
-      <!-- Provides portable constraints such as @Email -->
-      <!-- Hibernate Validator is shipped in JBoss AS 7 -->
       <dependency>
          <groupId>org.hibernate</groupId>
-         <artifactId>hibernate-validator</artifactId>
+         <artifactId>hibernate-core</artifactId>
+         <version>3.6.10.Final</version>
+      </dependency>
+      <dependency>
+         <groupId>mysql</groupId>
+         <artifactId>mysql-connector-java</artifactId>
+         <version>5.1.25</version>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-api</artifactId>
+         <version>1.7.5</version>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-simple</artifactId>
+         <version>1.7.5</version>
+      </dependency>
+      <dependency>
+         <groupId>org.hibernate</groupId>
+         <artifactId>hibernate-entitymanager</artifactId>
+         <version>3.6.10.Final</version>
+      </dependency>
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>1.18.6</version>
          <scope>provided</scope>
       </dependency>
-
-      <!-- Now we declare any tools needed -->
-
-      <!-- Annotation processor to generate the JPA 2.0 metamodel classes 
-           for typesafe criteria queries -->
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-jpamodelgen</artifactId>
-          <scope>provided</scope>
-      </dependency>
-
-       <!-- Annotation processor that raising compilation errors whenever 
-            constraint annotations are incorrectly used. -->
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-validator-annotation-processor</artifactId>
-          <scope>provided</scope>
-      </dependency>
-
-      <!-- Test scope dependencies -->
-      <dependency>
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-      </dependency>
-
-      <!-- Optional, but highly recommended -->
-      <!-- Arquillian allows you to test enterprise code such as EJBs and 
-         Transactional(JTA) JPA from JUnit/TestNG -->
-      <dependency>
-         <groupId>org.jboss.arquillian.junit</groupId>
-         <artifactId>arquillian-junit-container</artifactId>
-         <scope>test</scope>
-      </dependency>
-      
-      <dependency>
-         <groupId>org.jboss.arquillian.protocol</groupId>
-         <artifactId>arquillian-protocol-servlet</artifactId>
-         <scope>test</scope>               
-      </dependency>
-
    </dependencies>
 
    <build>
