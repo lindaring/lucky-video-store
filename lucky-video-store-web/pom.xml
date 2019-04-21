@@ -24,8 +24,6 @@
    </repositories>
 
    <dependencies>
-
-      <!-- Dependency on the EJB module so we can use it's services if needed -->
       <dependency>
          <groupId>za.co.lindaring</groupId>
          <artifactId>lucky-video-store-ejb</artifactId>
@@ -33,32 +31,11 @@
          <scope>provided</scope>
       </dependency>
 
-      <!-- Import the JAX-RS API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
-      <dependency>
-         <groupId>org.jboss.spec.javax.ws.rs</groupId>
-         <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
-         <scope>provided</scope>
-      </dependency>
-
-      <!-- Import the CDI API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
-      <dependency>
-         <groupId>javax.enterprise</groupId>
-         <artifactId>cdi-api</artifactId>
-         <scope>provided</scope>
-      </dependency>
-      
-      <!-- Import the JSF API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
       <dependency>
          <groupId>org.jboss.spec.javax.faces</groupId>
          <artifactId>jboss-jsf-api_2.1_spec</artifactId>
          <scope>provided</scope>
       </dependency>
-
-      <!-- Import the JPA API, we use provided scope as the API is included 
-         in JBoss AS 7 -->
       <dependency>
          <groupId>org.hibernate.javax.persistence</groupId>
          <artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -76,6 +53,12 @@
          <version>1.0.10</version>
       </dependency>
 
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>1.18.6</version>
+         <scope>provided</scope>
+      </dependency>
    </dependencies>
 
    <build>
@@ -84,8 +67,6 @@
             <artifactId>maven-war-plugin</artifactId>
             <version>2.1.1</version>
             <configuration>
-               <!-- Java EE 6 doesn't require web.xml, Maven needs to catch 
-                  up! -->
                <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
          </plugin>
