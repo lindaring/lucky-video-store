@@ -25,6 +25,12 @@
 
    <dependencies>
       <dependency>
+         <groupId>javax</groupId>
+         <artifactId>javaee-api</artifactId>
+         <version>7.0</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
          <groupId>za.co.lindaring</groupId>
          <artifactId>lucky-video-store-ejb</artifactId>
          <type>ejb</type>

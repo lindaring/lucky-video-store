@@ -4,16 +4,19 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
+    <link href="${facesContext.externalContext.requestContextPath}/resources/css/style.css" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
     <h1>Welcome to Lucky Video Store</h1>
 
     <h:form id="form">
-        <p:dataList value="#{homeView.movies}" var="movie" type="ordered">
+        <p:dataList value="#{homeView.videos}" var="video" type="ordered">
             <f:facet name="header">Basic</f:facet>
-            #{movie.name}, #{movie.yearReleased}
+            #{video.name}, #{video.yearReleased}
         </p:dataList>
+
+        <p:button outcome="add-video" value="Add Video" />
     </h:form>
 </h:body>
 </html>

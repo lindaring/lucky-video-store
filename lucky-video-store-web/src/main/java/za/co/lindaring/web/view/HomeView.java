@@ -1,13 +1,13 @@
-package za.co.lindaring.view;
+package za.co.lindaring.web.view;
 
 import lombok.Getter;
 import lombok.Setter;
-import za.co.lindaring.model.Video;
-import za.co.lindaring.service.VideoService;
+import za.co.lindaring.web.dao.VideoDAO;
+import za.co.lindaring.web.entity.Video;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.util.List;
 
@@ -17,14 +17,14 @@ import java.util.List;
 @ManagedBean(name = "homeView")
 public class HomeView {
 
-    private List<Video> movies;
+    private List<Video> videos;
 
-    @ManagedProperty("#{carService}")
-    private VideoService videoService;
+    @EJB
+    VideoDAO videoDAO;
 
     @PostConstruct
     public void init() {
-        movies = videoService.createMovies(10);
+        videos = videoDAO.getAllVideos();
     }
 
 }

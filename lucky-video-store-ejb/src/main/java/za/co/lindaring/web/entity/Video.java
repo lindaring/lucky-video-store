@@ -1,6 +1,9 @@
-package za.co.lindaring.model;
+package za.co.lindaring.web.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +14,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Data
 @Entity
 @Table(name = "tbl_video")
@@ -26,4 +32,10 @@ public class Video implements Serializable {
     public Long id;
     public String name;
     public int yearReleased;
+
+    public Video(String name, int yearReleased) {
+        this.name = name;
+        this.yearReleased = yearReleased;
+    }
+
 }
