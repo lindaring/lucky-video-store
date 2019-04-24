@@ -8,12 +8,12 @@ import za.co.lindaring.web.entity.Video;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.RequestScoped;
 import java.util.List;
 
 @Getter
 @Setter
-@ViewScoped
+@RequestScoped
 @ManagedBean(name = "homeView")
 public class HomeView {
 
@@ -21,6 +21,11 @@ public class HomeView {
 
     @EJB
     VideoDAO videoDAO;
+
+    public void deleteVideo(Long videoId) {
+        videoDAO.deleteVideo(videoId);
+        videos = videoDAO.getAllVideos();
+    }
 
     @PostConstruct
     public void init() {

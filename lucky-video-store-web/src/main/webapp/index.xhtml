@@ -13,7 +13,8 @@
     <h:form id="form">
         <p:dataList value="#{homeView.videos}" var="video" type="ordered">
             <f:facet name="header">Basic</f:facet>
-            #{video.name}, #{video.yearReleased}
+            <h:outputText value="#{video.name}, #{video.yearReleased}" />
+            <p:commandButton action="#{homeView.deleteVideo(video.id)}" update="@form" value="delete" style="margin-left: 10px" />
         </p:dataList>
 
         <p:button outcome="add-video" value="Add Video" />

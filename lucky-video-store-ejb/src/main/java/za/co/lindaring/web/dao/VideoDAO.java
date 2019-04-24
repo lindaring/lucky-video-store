@@ -23,4 +23,9 @@ public class VideoDAO {
         em.persist(video);
     }
 
+    public void deleteVideo(Long videoId) {
+        Video video = em.find(Video.class, videoId);
+        em.remove(video);
+    }
+
 }
